@@ -18,6 +18,6 @@
 
     <textarea name="content" placeholder="Input your message">{{ old('content') }}</textarea><br />
     {!! $errors->first('content', '<small>:message</small><br>') !!}
-    <button>Send </button>
+    <button>@lang('Send') </button>
 </form>
 @endsection

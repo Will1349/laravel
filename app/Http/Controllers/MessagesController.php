@@ -13,6 +13,9 @@ class MessagesController extends Controller
             'subject' => 'required',
             'content' => 'required|min:5',
 
+        ], [
+            'name.required' => __('I need your name'),
+
         ]);
         return 'Datos Validados';
     }

@@ -9,3 +9,4 @@ Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio
 Route::view('/contact', 'contact')->name('contact');
 
 Route::post('contact', [MessagesController::class, 'store'])->name('messagescontroller');
+
