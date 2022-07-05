@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MessageReceived;
+use Illuminate\Support\Facades\Mail;
+use Symfony\Component\Mailer\EventListener\MessageLoggerListener;
+
 class MessagesController extends Controller
 {
 
     public function store()
     {
-        request()->validate([
+        $msg = request()->validate([
             'name' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
@@ -17,6 +21,8 @@ class MessagesController extends Controller
             'name.required' => __('I need your name'),
 
         ]);
-        return 'Datos Validados';
+
+        Mail::to('willabad97@gmail.com')->queue(new MessageReceived($msg));
+        return 'Mensaje enviado';
     }
 }
