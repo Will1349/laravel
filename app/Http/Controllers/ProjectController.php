@@ -34,12 +34,7 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
-        # return Project::create([
-        #     'title' => request('title'),
-        #     'url' => request('url'),
-        #     'description' => request('description'),
-        # ]);
-        return Project::create([
+        Project::create([
             'title' => $request->title,
             'url' => $request->url,
             'description' => $request->description,
