@@ -10,7 +10,7 @@ Route::view('/about', 'about')->name('about');
 Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
 
 #Mostrar informacion de los proyectos
-Route::get('/portfolio/{id}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/portfolio/{project}', [ProjectController::class, 'show'])->name('projects.show');
 
 
 
