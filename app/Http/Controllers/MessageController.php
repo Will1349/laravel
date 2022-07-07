@@ -6,7 +6,7 @@ use App\Mail\MessageReceived;
 use Illuminate\Support\Facades\Mail;
 use Symfony\Component\Mailer\EventListener\MessageLoggerListener;
 
-class MessagesController extends Controller
+class MessageController extends Controller
 {
 
     public function store()

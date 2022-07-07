@@ -4,7 +4,7 @@
 
 @section('content')
 <h1>Contact</h1>
-<form method="POST" action=" {{  route('contact')}}">
+<form method="POST" action=" {{  route('message.store')}}">
     @csrf
 
     <input name=" name" placeholder="Input your name" value="{{ old('name') }}"><br />

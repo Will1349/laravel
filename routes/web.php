@@ -1,12 +1,19 @@
 <?php
 
-use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\MessagesController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MessageController;
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
-Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+
+#Listar proyectos
+Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.index');
+
+#Mostrar informacion de los proyectos
+Route::get('/portfolio/{id}', [ProjectController::class, 'show'])->name('projects.show');
+
+
+
 Route::view('/contact', 'contact')->name('contact');
 
-Route::post('contact', [MessagesController::class, 'store'])->name('messagescontroller');
-
+Route::post('contact', [MessageController::class, 'store'])->name('message.store');
