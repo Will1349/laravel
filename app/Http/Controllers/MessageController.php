@@ -23,6 +23,6 @@ class MessageController extends Controller
         ]);
 
         Mail::to('willabad97@gmail.com')->queue(new MessageReceived($msg));
-        return 'Mensaje enviado';
+        return back()->with('status', 'Recibimims tu mensaje putito');
     }
 }
