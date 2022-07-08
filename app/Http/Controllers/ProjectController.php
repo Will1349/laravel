@@ -23,6 +23,7 @@ class ProjectController extends Controller
         ]);
     }
 
+    #Funcion para Mostrar el proyecto
     public function show(Project $project)
     {
         return view('projects.show', [
@@ -30,6 +31,7 @@ class ProjectController extends Controller
         ]);
     }
 
+#Funcion para crear proyecto
     public function create()
     {
         return view('projects.create', [
@@ -37,7 +39,7 @@ class ProjectController extends Controller
         ]);
     }
 
-
+    #Funcion para crear proyecto
     public function store(SaveProjectRequest $request)
     {
         Project::create($request->validated());
@@ -60,6 +62,7 @@ class ProjectController extends Controller
 
     }
 
+    #Funcion para actualizar proyecto
     public function edit(Project $project)
     {
         return view('projects.edit', [
@@ -67,10 +70,18 @@ class ProjectController extends Controller
         ]);
     }
 
+    #Funcion para actualizar proyecto
     public function update(Project $project, SaveProjectRequest $request)
     {
         $project->update($request->validated());
 
         return redirect()->route('projects.show', $project);
+    }
+
+    #Funcion para el=kiminar proyecto
+    public function destroy(Project $project)
+    {
+        $project->delete();
+        return redirect()->route('projects.index');
     }
 }
