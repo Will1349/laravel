@@ -11,6 +11,11 @@ Route::get('/portfolio', [ProjectController::class, 'index'])->name('projects.in
 
 Route::get('/portfolio/create', [ProjectController::class, 'create'])->name('projects.create');
 
+Route::get('/portfolio/{project}/editar', [ProjectController::class, 'edit'])->name('projects.edit');
+
+Route::patch('/portfolio/{project}', [ProjectController::class, 'update'])->name('projects.update');
+
+
 Route::post('/portfolio', [ProjectController::class, 'store'])->name('projects.store');
 
 #Mostrar informacion de los proyectos
