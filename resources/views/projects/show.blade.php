@@ -4,16 +4,17 @@
 
 @section('content')
 <h1>{{ $project->title }}</h1>
-<a href="{{ route('projects.edit', $project)}}">Editar</a>
 
+@auth
+<a href="{{ route('projects.edit', $project)}}">Editar</a>
 
 <form method="POSt" action="{{ route('projects.destroy', $project) }}">
 
-
     @csrf @method('DELETE')
-    <button>Eliminar</button>
 
+    <button>Eliminar</button>
 </form>
+@endauth
 
 <p>{{ $project->description }}</p>
 <p>{{ $project->created_at-> diffForHumans()}}</p>
