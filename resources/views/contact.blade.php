@@ -15,6 +15,7 @@
 
                 @csrf
                 <h1 class="display-4">@lang('Contact')</h1>
+                <hr>
                 <div class="form-group">
                     <label for="name">Nombre</label>
                     <input class="form-control bg-light shadow-sm @error('name') is-invalid @else border-0 @enderror"
@@ -23,7 +24,9 @@
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
+
                     @enderror
+                    <br>
                 </div>
 
 
@@ -36,6 +39,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+                    <br>
                 </div>
 
 
@@ -44,13 +48,14 @@
                 <div class="form-group">
                     <label for="subject">Asunto</label>
                     <input class="form-control bg-light shadow-sm @error('subject') is-invalid @else border-0 @enderror"
-                        id="subject" name="subject" placeholder="Escribe aqui el asunto de tu mensaje"
+                        id="subject" name="subject" placeholder="Escribe el asunto de tu mensaje aquí"
                         value="{{ old('subject') }}">
                     @error('subject')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+                    <br>
                 </div>
 
                 <div class="form-group">
@@ -64,6 +69,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                     @enderror
+                    <br>
                 </div>
 
                 <button class="btn btn-primary btn-lg w-100">@lang('Send') </button>
