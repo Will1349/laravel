@@ -1,5 +1,11 @@
 @csrf
 
+<div class="mb-3">
+    <label for="formFile" class="form-label">Default file input example</label>
+    <input name="image" class="form-control" type="file" id="formFile">
+</div>
+<br>
+
 <div class="form-group">
     <label for="title">Titulo del proyecto</label>
     <input class="form-control border-0 bg-light shadow-sm" id="title" type="text" name="title"
