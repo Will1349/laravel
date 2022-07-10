@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Project;
-use App\Http\Requests\SaveProjectRequest;
-use Illuminate\Support\Facades\Storage;
+use function Psy\debug;
+use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 use function GuzzleHttp\describe_type;
-use function Psy\debug;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\SaveProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -25,7 +26,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('projects.index', [
-            'projects' => Project::latest()->simplePaginate(7)
+            'projects' => Project::latest()->simplePaginate()
         ]);
     }
 
@@ -54,6 +55,14 @@ class ProjectController extends Controller
         $project->image = $request->file('image')->store('images');
 
         $project->save();
+
+        $image = Image::make(Storage::get($project->image))
+            ->widen(500)
+            ->limitColors(220)
+            ->encode();
+
+        Storage::put($project->image, (string) $image);
+
 
         return redirect()->route('projects.index')->with('status', 'El proyecto fue creado con éxito');
 
@@ -91,6 +100,14 @@ class ProjectController extends Controller
             $project->image = $request->file('image')->store('images');
 
             $project->save();
+
+
+            $image = Image::make(Storage::get($project->image))
+                ->widen(500)
+                ->limitColors(220)
+                ->encode();
+
+            Storage::put($project->image, (string) $image);
         } else {
             $project->update(array_filter($request->validated()));
         }
