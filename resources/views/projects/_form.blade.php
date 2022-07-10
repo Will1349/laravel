@@ -1,5 +1,9 @@
 @csrf
 
+@if ($project->image)
+<img class="card-img-top mb-3" src="/storage/{{ $project->image }}" alt="{{ $project->title }}">
+@endif
+
 <div class="mb-3">
     <label for="formFile" class="form-label">Selecciona una imagen para el proyecto</label>
     <input name="image" class="form-control" type="file" id="formFile">
