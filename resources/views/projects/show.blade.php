@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','Portafolio |' . $project->title)
+@section('title','Portafolio | ' . $project->title)
 
 @section('content')
 <div class="container">
