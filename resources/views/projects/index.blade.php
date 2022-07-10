@@ -24,7 +24,8 @@
         <div class="card border-0 shadow-sm mt-4 mx-auto" style="width: 18rem">
 
             @if ($project->image)
-            <img class="card-img-top" src="/storage/{{ $project->image }}" alt="{{ $project->title }}">
+            <img class="card-img-top" style="height: 150px; object-fit:cover" src="/storage/{{ $project->image }}"
+                alt="{{ $project->title }}">
             @endif
 
 
