@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Http\Requests\SaveProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 use function GuzzleHttp\describe_type;
 use function Psy\debug;
@@ -83,7 +84,18 @@ class ProjectController extends Controller
     #Funcion para actualizar proyecto
     public function update(Project $project, SaveProjectRequest $request)
     {
-        $project->update($request->validated());
+        if ($request->hasFile('image')) {
+            Storage::delete($project->image);
+            $project->fill($request->validated());
+
+            $project->image = $request->file('image')->store('images');
+
+            $project->save();
+        } else {
+            $project->update(array_filter($request->validated()));
+        }
+
+
 
         return redirect()->route('projects.show', $project)->with('status', 'El proyecto fue actualizado con éxito');
     }
@@ -91,7 +103,9 @@ class ProjectController extends Controller
     #Funcion para el=kiminar proyecto
     public function destroy(Project $project)
     {
+        Storage::delete($project->image);
         $project->delete();
+
         return redirect()->route('projects.index')->with('status', 'El proyecto fue eliminado con éxito');
     }
 }
