@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OptimizeProjectImage
+class OptimizeProjectImage implements ShouldQueue
 {
     /**
      * Create the event listener.
