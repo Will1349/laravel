@@ -27,7 +27,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('projects.index', [
-            'projects' => Project::latest()->simplePaginate()
+            'projects' => Project::latest()->simplePaginate(6)
         ]);
     }
 
