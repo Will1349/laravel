@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ProjectSaved;
 use App\Models\Project;
 use function Psy\debug;
 use Illuminate\Http\Request;
@@ -55,13 +56,7 @@ class ProjectController extends Controller
         $project->image = $request->file('image')->store('images');
 
         $project->save();
-
-        $image = Image::make(Storage::get($project->image))
-            ->widen(500)
-            ->limitColors(220)
-            ->encode();
-
-        Storage::put($project->image, (string) $image);
+        ProjectSaved::dispatch($project);
 
 
         return redirect()->route('projects.index')->with('status', 'El proyecto fue creado con éxito');
@@ -101,13 +96,7 @@ class ProjectController extends Controller
 
             $project->save();
 
-
-            $image = Image::make(Storage::get($project->image))
-                ->widen(500)
-                ->limitColors(220)
-                ->encode();
-
-            Storage::put($project->image, (string) $image);
+            ProjectSaved::dispatch($project);
         } else {
             $project->update(array_filter($request->validated()));
         }
