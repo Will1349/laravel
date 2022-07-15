@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Listeners;
+
 use App\Events\ProjectSaved;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
@@ -27,10 +28,9 @@ class OptimizeProjectImage implements ShouldQueue
      */
     public function handle(ProjectSaved $event)
     {
-        $image = Image::make(Storage::get($event->project->image))
-            ->widen(500)
-            ->limitColors(220)
-            ->encode();
+        throw new \Exception('Error al procesar el procedimiento');
+
+        $image = Image::make(Storage::get($event->project->image))->rezise(450,450)->limitColors(220)->encode();
 
         Storage::put($event->project->image, (string) $image);
     }

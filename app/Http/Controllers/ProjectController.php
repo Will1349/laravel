@@ -7,7 +7,6 @@ use App\Models\Project;
 use function Psy\debug;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
-
 use function GuzzleHttp\describe_type;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SaveProjectRequest;
