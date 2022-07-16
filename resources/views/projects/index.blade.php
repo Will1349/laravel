@@ -40,9 +40,16 @@
                     {{ $project->description }}
                 </p>
 
-                <a href="{{ route('projects.show', $project)}}" class="btn btn-primary btn-sm ">
-                    Ver más...
-                </a>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="{{ route('projects.show', $project)}}" class="btn btn-primary btn-sm ">
+                        Ver más...
+                    </a>
+
+
+                    @if ($project->category_id)
+                    <a href="#" class="badge badge-secondary">{{ $project->category->name }}</a>
+                    @endif
+                </div>
             </div>
         </div>
 
