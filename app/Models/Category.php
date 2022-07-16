@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
+
+    public function projects($value = '')
+    {
+        return $this->hasMany(Project::class);
+    }
     use HasFactory;
 }
