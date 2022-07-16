@@ -10,6 +10,7 @@ use Intervention\Image\Facades\Image;
 use function GuzzleHttp\describe_type;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\SaveProjectRequest;
+use App\Models\Category;
 
 class ProjectController extends Controller
 {
@@ -42,7 +43,8 @@ class ProjectController extends Controller
     public function create()
     {
         return view('projects.create', [
-            'project' => new Project
+            'project' => new Project,
+            'categories' => Category::pluck('name', 'id')
         ]);
     }
 
@@ -59,28 +61,14 @@ class ProjectController extends Controller
 
 
         return redirect()->route('projects.index')->with('status', 'El proyecto fue creado con éxito');
-
-
-        #Project::create([
-        #'title' => $request->title,
-        #'url' => $request->url,
-        #'description' => #$request->description,
-        #]);
-        #$fields = request()->validate([
-        #    'title' => 'required',
-        #    'url' => 'required',
-        #    'description' => 'required',
-        #]);
-
-        #  Project::create(request()->only('title', 'url', 'description'));
-
     }
 
     #Funcion para actualizar proyecto
     public function edit(Project $project)
     {
         return view('projects.edit', [
-            'project' => $project
+            'project' => $project,
+            'categories' => Category::pluck('name', 'id')
         ]);
     }
 
