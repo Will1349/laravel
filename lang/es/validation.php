@@ -173,6 +173,7 @@ return [
         'date'                  => 'fecha',
         'time'                  => 'hora',
         'subject'               => 'asunto',
-        'image'               => 'imagen',
+        'image'                 => 'imagen',
+        'category_id'           => 'categoría',
     ],
 ];
