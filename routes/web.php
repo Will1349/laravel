@@ -1,7 +1,13 @@
 <?php
 
-use App\Http\Controllers\ProjectController;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ProjectController;
+
+
+//DB::listen(function ($query) {
+//var_dump($query->sql);
+//});
 
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
