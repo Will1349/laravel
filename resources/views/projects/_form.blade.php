@@ -51,7 +51,7 @@
     <label for="description">Descripción del proyecto </label>
     <textarea class="form-control" name="description">{{old('description',$project->description)}}</textarea>
 </div>
-
+<br>
 <!--Botón para Guardar el proyecto-->
 <button class="btn btn-primary btn-lg w-100">{{ $btnText }}</button>
 
