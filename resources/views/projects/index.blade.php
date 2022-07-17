@@ -55,7 +55,8 @@
 
 
                     @if ($project->category_id)
-                    <a href="{{ route('categories.show', $project->category) }}" class="badge badge-secondary">
+                    <a href="{{ route('categories.show', $project->category) }}"
+                        class="badge badge-secondary text-primary">
                         {{ $project->category->name }}
                     </a>
                     @endif
