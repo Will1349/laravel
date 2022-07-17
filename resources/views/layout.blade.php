@@ -22,9 +22,12 @@
             @yield('content')
         </main>
 
-        <footer class=" bg-white text-black-50 py-3 shadow">
-            {{ config('app.name') }} | Copyright Neo {{ date('Y') }}
-        </footer>
+        <footer class=" bg-white text-primary py-3 shadow text-center ">
+            {{ config('app.name') }} | <a class="text-secondary" href="https://www.facebook.com/WillAbad1349/">Industry
+                city
+                by Konan</a> {{
+            date('Y')
+            }} </footer>
 
     </div>
 
