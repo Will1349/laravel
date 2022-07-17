@@ -14,7 +14,7 @@
 
 
                 @csrf
-                <h1 class="display-4">@lang('Contact')</h1>
+                <h1 class="display-4 text-primary">@lang('Contact')</h1>
                 <hr>
                 <div class="form-group">
                     <label for="name">Nombre</label>
