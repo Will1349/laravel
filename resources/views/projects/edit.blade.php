@@ -12,7 +12,7 @@
             <form class="bg-white py-3 px-4 shadow rounded" method="POST"
                 action="{{  route('projects.update', $project)}}" enctype="multipart/form-data">
                 @method('PATCH')
-                <h1 class="display-4">Editar proyecto</h1>
+                <h1 class="display-4 text-primary">Editar proyecto</h1>
                 <hr>
 
                 @include('projects/_form',['btnText'=>'Actualizar'])
