@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light navbar-expand-lg bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}">
+        <a class="navbar-brand text-primary" href="{{ route('home') }}">
             {{ config('app.name') }}
         </a>
 
