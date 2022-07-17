@@ -23,7 +23,8 @@
         </main>
 
         <footer class=" bg-white text-primary py-3 shadow text-center ">
-            {{ config('app.name') }} | <a class="text-secondary" href="https://www.facebook.com/WillAbad1349/">Industry
+            {{ config('app.name') }} | <a class="text-secondary"
+                href="https://www.youtube.com/watch?v=8k5WQnfCjmk">Industry
                 city
                 by Konan</a> {{
             date('Y')
