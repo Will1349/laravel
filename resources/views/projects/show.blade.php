@@ -18,7 +18,8 @@
                 <h1 class="mb-2 shadow">{{ $project->title }}</h1>
 
                 @if ($project->category_id)
-                <a href="{{ route('categories.show', $project->category) }}" class="badge badge-secondary mb-3">
+                <a href="{{ route('categories.show', $project->category) }}"
+                    class="badge badge-secondary text-primary mb-3">
                     {{ $project->category->name }}
                 </a>
                 @endif
