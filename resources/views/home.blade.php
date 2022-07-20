@@ -18,7 +18,7 @@
             <a class="btn btn-lg w-100 btn-outline-primary" href="{{ route('projects.index') }}">Portafolio</a>
         </div>
         <div class="col-12 col-lg-6">
-            <img class="img-fluid mb-4" src="/img/home-our.svg" alt="Desarrollo Web">
+            <img class="img-fluid mb-4" src="/img/home.svg" alt="Desarrollo Web">
         </div>
     </div>
 </div>
