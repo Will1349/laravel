@@ -9,7 +9,7 @@
 <!--Forma para elegir imagen del proyecto-->
 <div class="mb-3">
     <label for="formFile" class="form-label">Selecciona una imagen para el proyecto</label>
-    <input name="image" class="form-control" type="file" id="formFile">
+    <input name="image" class="form-control" type="file" id="formFile" value="{{ old('image', $project->image) }}">
 </div>
 
 
