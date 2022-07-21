@@ -33,4 +33,4 @@ Route::get('/categories/{category}', [CategoryController::class, 'show'])->name(
 Route::view('/contact', 'contact')->name('contact');
 Route::post('contact', [MessageController::class, 'store'])->name('message.store');
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);

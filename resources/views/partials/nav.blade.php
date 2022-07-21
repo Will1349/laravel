@@ -50,6 +50,15 @@
                         Login
                     </a>
                 </li>
+
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link {{ setActive('register') }}" href="{{ route('register') }}">{{ __('Register')
+                        }}</a>
+                </li>
+                @endif
+
+
                 @endauth
 
             </ul>
