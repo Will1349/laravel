@@ -33,7 +33,7 @@
 
         @isset($category)
         <div class="m-4">
-            <p class=" lead text-secondary">{{ $category->description}}
+            <p class=" lead text-secondary">{{ $category->category_description}}
             </p>
         </div>
         <hr>

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('url')->unique();
+            $table->text('category_description');
             $table->timestamps();
         });
 
