@@ -9,7 +9,9 @@
 
         <div>
             <h1 class="display-4 mb-0 color text-primary">{{ $category->name}}</h1>
-            <a href="{{ route('projects.index') }}">Regresar al portafolio</a>
+            <hr>
+            <a class="btn btn-md w-10 btn-outline-primary" href="{{ route('projects.index') }}">Regresar al
+                portafolio</a>
         </div>
 
         @else
@@ -21,7 +23,10 @@
     </div>
 
     <hr>
-    <p class="lead text-secondary"> Proyectos realizados Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p class="lead text-secondary"> Proyectos realizados Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptate numquam eveniet at quod eaque consequatur. Fugiat, inventore minus molestiae reprehenderit laboriosam
+        aspernatur eaque dolorum ducimus aperiam, voluptates nostrum error iure. Lorem ipsum dolor sit amet consectetur
+        adipisicing elit.
     </p>
 
 
@@ -56,7 +61,7 @@
 
                     @if ($project->category_id)
                     <a href="{{ route('categories.show', $project->category) }}"
-                        class="badge badge-secondary text-primary">
+                        class="badge badge-secondary text-bg-secondary ">
                         {{ $project->category->name }}
                     </a>
                     @endif

@@ -15,11 +15,11 @@
 
             <div class="bg-white p-5 shadow rounded">
 
-                <h1 class="mb-2 shadow">{{ $project->title }}</h1>
+                <h1 class="mb-2 shadow text-primary">{{ $project->title }}</h1>
 
                 @if ($project->category_id)
                 <a href="{{ route('categories.show', $project->category) }}"
-                    class="badge badge-secondary text-primary mb-3">
+                    class="badge badge-secondary text-bg-primary mb-3">
                     {{ $project->category->name }}
                 </a>
                 @endif
@@ -41,10 +41,10 @@
                     </a>
 
                     @auth
-                    <div class="btn-group btn-group-sm">
+                    <div class="btn-group btn-group-lg">
                         <a class="btn btn-primary" href="{{ route('projects.edit', $project)}}">Editar
                         </a>
-
+                        <hr>
                         <a class="btn btn-danger" href="#" onclick="document.getElementById('delete-project').submit()">
                             Eliminar
                         </a>

@@ -55,8 +55,8 @@
 <!--Botón para Guardar el proyecto-->
 <button class="btn btn-primary btn-lg w-100">{{ $btnText }}</button>
 
-
+<hr>
 <!--Botón para cancelar accioes dentro del proyecto-->
-<a class="btn btn-link w-100" href="{{ route('projects.index') }}">
+<a class="btn btn-lg w-100 btn-outline-primary" href="{{ route('projects.index') }}">
     Cancelar
 </a>
