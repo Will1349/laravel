@@ -4,31 +4,55 @@
 
 @section('content')
 <div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        @isset($category)
+    <div class="d-flex justify-content-between align-items-center mb-1">
 
+        @isset($category)
         <div>
-            <h1 class="display-4 mb-0 color text-primary">{{ $category->name}}</h1>
-            <hr>
             <a class="btn btn-md w-10 btn-outline-primary" href="{{ route('projects.index') }}">Regresar al
                 portafolio</a>
         </div>
 
+        <div>
+            <h1 class="display-4 mb-0 color text-primary">{{ $category->name}}</h1>
+            <hr>
+        </div>
+
         @else
-        <h1 class="display-4 mb-0 text-primary">@lang ('Projects')</h1>
+        <div>
+            <h1 class="display-4 mb-0 text-primary">@lang ('Projects')</h1>
+            @endisset
+            <hr>
+            @auth
+            <div>
+                <a class="btn btn-primary w-100" href="{{ route('projects.create') }}">Crear proyecto</a>
+                <hr>
+            </div>
+            @endauth
+        </div>
+
+
+        @isset($category)
+        <div class="m-4">
+            <p class=" lead text-secondary">{{ $category->description}}
+            </p>
+        </div>
+        <hr>
+
+        @else
+        <div class="m-4">
+            <p class="lead text-secondary">Un proyecto debe ofrecer una visión panorámica de la intervención propuesta.
+                Esta
+                descripción se logra con el uso del
+                instrumento denominado marco lógico. El marco lógico es, en esencia, una matriz conceptual que permite
+                organizar
+                los
+                distintos elementos de un proyecto..</p>
+        </div>
+        <hr>
         @endisset
-        @auth
-        <a class="btn btn-primary" href="{{ route('projects.create') }}">Crear proyecto</a>
-        @endauth
+
+
     </div>
-
-    <hr>
-    <p class="lead text-secondary"> Proyectos realizados Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Voluptate numquam eveniet at quod eaque consequatur. Fugiat, inventore minus molestiae reprehenderit laboriosam
-        aspernatur eaque dolorum ducimus aperiam, voluptates nostrum error iure. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit.
-    </p>
-
 
 
     <div class="d-flex flex-wrap justify-content-between align-items-start">
